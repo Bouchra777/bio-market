@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh and Tasty Eggs</title>
+    <link rel="stylesheet" href="assets\style\productDetail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700&family=Just+Another+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets\img\bio market logo (new).png"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/img/logobiolife.png" alt="BioLife Logo" />
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#">Dairy</a>
+        <a href="#">Eggs</a>
+        <a href="#">Poultry</a>
+        <a href="#">Rice</a>
+        <a href="#">Beef/Mutton</a>
+        <a href="#" id="more">More</a>
+
+        <button class="cart-btn">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+            <path d="M20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+            ></path>
+          </svg>
+          <span>0</span>
+        </button>
+
+        <input type="text" class="search-box" placeholder="Search" />
+
+        <img
+          src="./assets/img/user.png"
+          alt="User Profile"
+          class="user-avatar"
+        />
+      </nav>
+    </header>
+
+    <!-- Cart notification -->
+    <div id="cart-notification" class="cart-notification">
+      <div class="notification-content">
+        <img src="assets\img\main-image.png" alt="Product thumbnail" />
+        <div class="notification-text">Added to Cart</div>
+        <a href="#" class="view-cart-btn">View Cart</a>
+      </div>
+    </div>
+
+    <main>
+      <div class="product-container">
+        <div class="product-gallery">
+          <div class="main-image">
+            <img src="assets\img\main-image.png" alt="Fresh and Tasty Eggs" />
+          </div>
+          <div class="thumbnails">
+            <div class="thumbnail active">
+              <img src="assets\img\main-image.png" alt="Thumbnail 1" />
+            </div>
+            <div class="thumbnail">
+              <img src="assets\img\thumbnail2.png" alt="Thumbnail 2" />
+            </div>
+            <div class="thumbnail">
+              <img src="assets\img\thumbnail3.png" alt="Thumbnail 3" />
+            </div>
+          </div>
+        </div>
+
+        <div class="product-details">
+          <h1>6 Fresh and Tasty Eggs</h1>
+          <div class="brand">BY PATEGGS</div>
+
+          <div class="price-info">
+            <div class="original-price">MAD 66.00</div>
+            <div class="sale-price">Sale 12% OFF</div>
+          </div>
+          <div class="limited-time">Inclusive of all taxes</div>
+
+          <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+
+          <div class="quantity-selection">
+            <label>QTY</label>
+            <div class="quantity-controls">
+              <button class="quantity-btn minus">-</button>
+              <input type="text" id="quantity" value="1" readonly />
+              <button class="quantity-btn plus">+</button>
+            </div>
+          </div>
+
+          <button class="add-to-cart-btn">Add to Cart</button>
+
+          <div class="reviews-section">
+            <h2>
+              Reviews
+              <div class="review-controls">
+                <button class="review-nav prev">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="review-nav next">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </h2>
+
+            <div class="review active">
+              <div class="reviewer">
+                <img src="assets\img\jhonSmith.png" alt="John Smith" />
+                <div class="reviewer-info">
+                  <div class="reviewer-name">John Smith</div>
+                  <div class="review-rating">9/10</div>
+                </div>
+              </div>
+              <div class="review-text">Amazing Product.</div>
+            </div>
+
+            <div class="review">
+              <div class="reviewer">
+                <img src="assets\img\debraAnderson.png" alt="Debra Anderson" />
+                <div class="reviewer-info">
+                  <div class="reviewer-name">Debra Anderson</div>
+                  <div class="review-rating">8/10</div>
+                </div>
+              </div>
+              <div class="review-text">Highly Recommended!</div>
+            </div>
+
+            <div class="write-review">
+              <h3>Write a Review</h3>
+              <div class="rating-selection">
+                <div class="rating-dots">
+                  <div class="rating-dot">0</div>
+                  <div class="rating-dot">1</div>
+                  <div class="rating-dot">2</div>
+                  <div class="rating-dot">3</div>
+                  <div class="rating-dot">4</div>
+                  <div class="rating-dot">5</div>
+                  <div class="rating-dot">6</div>
+                  <div class="rating-dot">7</div>
+                  <div class="rating-dot">8</div>
+                  <div class="rating-dot">9</div>
+                  <div class="rating-dot active">10</div>
+                </div>
+              </div>
+              <form id="review-form">
+                <textarea placeholder="Your Message"></textarea>
+                <div class="form-row">
+                  <input type="text" placeholder="Your Name" />
+                  <input type="email" placeholder="Your Email" />
+                  <button type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="related-products">
+        <div class="section-header">
+          <h2>Related Products</h2>
+          <a href="#" class="view-all"
+            >Check all Products <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/img/marrow spaghetti.png"
+                alt="Marrow Spaghetti"
+              />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">MARROW SPAGHETTI</h3>
+              <div class="product-price">
+                <span class="original-price2">MAD 72.00</span>
+                <span class="sale-price">MAD 60.00</span>
+              </div>
+              <button class="add-cart-btn">
+                <img src="assets/img/plus.png" alt="Add to cart" />
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/img/turtle cocoa pillows.png"
+                alt="Turtle COCOA PILLOWS"
+              />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">Turtle COCOA PILLOWS</h3>
+              <div class="product-price">
+                <span class="original-price2">MAD 70.00</span>
+                <span class="sale-price">MAD 50.00</span>
+              </div>
+              <button class="add-cart-btn">
+                <img src="assets/img/plus.png" alt="Add to cart" />
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/img/olive oil.png"
+                alt="OLIVE OIL extra virgin"
+              />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">OLIVE OIL extra virgin</h3>
+              <div class="product-price">
+                <span class="original-price2">MAD 72.00</span>
+                <span class="sale-price">MAD 60.00</span>
+              </div>
+              <button class="add-cart-btn">
+                <img src="assets/img/plus.png" alt="Add to cart" />
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/img/white rice.png" alt="White rice" />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">White rice</h3>
+              <div class="product-price">
+                <span class="original-price2">MAD 72.00</span>
+                <span class="sale-price">MAD 60.00</span>
+              </div>
+              <button class="add-cart-btn">
+                <img src="assets/img/plus.png" alt="Add to cart" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Launch Sale Section -->
+      <div class="launch-sale">
+        <div class="decorative-curves">
+          <div class="curve curve-1"></div>
+          <div class="curve curve-2"></div>
+          <div class="curve curve-3"></div>
+          <div class="circle-accent"></div>
+        </div>
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h2>Launch Sale is On</h2>
+            <p>Shop today</p>
+          </div>
+          <a href="#" class="shop-btn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <h2 class="footer-title">BIOLIFE Products</h2>
+
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Links</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Affiliation</a></li>
+              <li><a href="#">Terms of Use</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li><a href="#">Eggs</a></li>
+              <li><a href="#">Drinks</a></li>
+              <li><a href="#">Eatables</a></li>
+              <li><a href="#">Milk & Cheese</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Terms</h3>
+            <ul class="footer-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Subscribe to Newsletter</h3>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Enter your email"
+              />
+              <button type="submit" class="newsletter-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            All Rights Reserved - BioLife Products
+          </div>
+
+          <div class="payment-methods-footer">
+            <img src="assets/img/mastercard.png" alt="Mastercard" />
+            <img src="assets/img/cartvisa.png" alt="Visa" />
+            <img src="assets/img/unionpay.png" alt="Union Pay" />
+            <img src="assets/img/applepay.png" alt="Apple Pay" />
+            <img src="assets/img/googlepay.png" alt="Google Pay" />
+          </div>
+
+          <div class="footer-terms">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets\js\productDetail.js"></script>
+  </body>
+</html>
