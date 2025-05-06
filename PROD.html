@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIOLIFE - Organic Food Marketplace</title>
+    <link rel="stylesheet" href="assets\style\PROD.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700&family=Just+Another+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Keeping the header as is -->
+    <header>
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="BioLife Logo" />
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#">Dairy</a>
+        <a href="#">Eggs</a>
+        <a href="#">Poultry</a>
+        <a href="#">Rice</a>
+        <a href="#">Beef/Mutton</a>
+        <a href="#" id="more">More</a>
+
+        <button class="cart-btn">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+            <path d="M20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+            ></path>
+          </svg>
+          <span id="cart-count">0</span>
+        </button>
+
+        <input type="text" class="search-box" placeholder="Search" />
+
+        <img
+          src="assets\img\utilisateur.png"
+          alt="User Profile"
+          class="user-avatar"
+        />
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="content">
+        <!-- Sidebar with filters -->
+        <aside class="sidebar">
+          <div class="filter-header">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+            <span>Filters</span>
+          </div>
+
+          <div class="filter-section">
+            <h3>Brands</h3>
+            <div class="brand-tags">
+              <span class="tag active">EXTRA BIO</span>
+              <span class="tag">Arya</span>
+              <span class="tag">Asya</span>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h3>Category</h3>
+            <div class="category-tags">
+              <span class="tag">Dairy</span>
+              <span class="tag">Eggs</span>
+              <span class="tag">Poultry</span>
+              <span class="tag">Rice</span>
+              <span class="tag">Beef/Mutton</span>
+              <span class="tag">Drinks</span>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h3>Price</h3>
+            <div class="price-range">
+              <div class="price-labels price-range-header">
+                <span>MAD 0</span>
+                <span>MAD 1000</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="1000"
+                value="500"
+                class="price-slider"
+                id="price-slider"
+              />
+              <div class="price-labels">
+                <span>MAD 0</span>
+                <span id="current-price">MAD 500</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main product area -->
+        <main class="products-container">
+          <div class="products-header">
+            <div></div>
+            <div class="sort-dropdown">
+              <span>Sort</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+              <select id="sort-select" class="sort-select">
+                <option value="default">Default</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+                <option value="name-desc">Name: Z to A</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="products-grid">
+            <!-- Product cards will be generated by JavaScript -->
+            <!-- Example of new product card structure -->
+            <div class="product-card">
+              <div class="product-image-container">
+                <img
+                  src="assets\img\eggs.png"
+                  alt="Fresh and Tasty Eggs"
+                  class="product-img"
+                />
+              </div>
+              <div class="product-details">
+                <div class="product-price-tag">MAD 20.00</div>
+                <h3 class="product-name">6 Fresh and Tasty Eggs</h3>
+                <button class="add-to-cart-button" data-id="1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Launch Sale Section -->
+    <div class="launch-sale">
+      <div class="decorative-curves">
+        <div class="curve curve-1"></div>
+        <div class="curve curve-2"></div>
+        <div class="curve curve-3"></div>
+        <div class="circle-accent"></div>
+      </div>
+      <div class="content-wrapper">
+        <h2>Launch Sale is On</h2>
+        <p>Shop today</p>
+        <div class="text-content"></div>
+        <a href="#" class="shop-btn">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <h2 class="footer-title">BIOLIFE Products</h2>
+
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Links</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Affiliation</a></li>
+              <li><a href="#">Terms of Use</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li><a href="#">Eggs</a></li>
+              <li><a href="#">Drinks</a></li>
+              <li><a href="#">Eatables</a></li>
+              <li><a href="#">Milk & Cheese</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Terms</h3>
+            <ul class="footer-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Subscribe to Newsletter</h3>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Enter your email"
+              />
+              <button type="submit" class="newsletter-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            All Rights Reserved - BioLife Products
+          </div>
+
+          <div class="payment-methods-footer">
+            <img src="assets/img/mastercard.png" alt="Mastercard" />
+            <img src="assets/img/cartvisa.png" alt="Visa" />
+            <img src="assets/img/unionpay.png" alt="Union Pay" />
+            <img src="assets/img/applepay.png" alt="Apple Pay" />
+            <img src="assets/img/googlepay.png" alt="Google Pay" />
+          </div>
+
+          <div class="footer-terms">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets\js\PROD.js"></script>
+  </body>
+</html>
