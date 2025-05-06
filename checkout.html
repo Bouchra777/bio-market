@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BioLife - Checkout</title>
+    <link rel="stylesheet" href="assets\style\Checkout.css" />
+    <link rel="icon" type="image/png" href="assets\img\logobiolife.png" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/img/logobiolife.png" alt="BioLife Logo" />
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#">Dairy</a>
+        <a href="#">Eggs</a>
+        <a href="#">Poultry</a>
+        <a href="#">Rice</a>
+        <a href="#">Beef/Mutton</a>
+        <a href="#" id="more">More</a>
+
+        <button class="cart-btn">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+            <path d="M20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+            ></path>
+          </svg>
+          <span>1</span>
+        </button>
+
+        <input type="text" class="search-box" placeholder="Search" />
+
+        <img
+          src="./assets/img/user.png"
+          alt="User Profile"
+          class="user-avatar"
+        />
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="main-content">
+        <div class="checkout-form">
+          <h2>Billing details</h2>
+
+          <div class="form-group">
+            <label>First & last name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ex: John Smith"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Ex: johnsmith@gmail.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Address</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First line"
+              style="margin-bottom: 10px"
+            />
+            <input type="text" class="form-control" placeholder="Second line" />
+          </div>
+
+          <div class="payment-methods">
+            <h2>Payment method</h2>
+
+            <div class="payment-option selected" id="credit-card-option">
+              <input type="radio" id="credit-card" name="payment" checked />
+              <label for="credit-card">Credit Card</label>
+              <div class="payment-icons">
+                <img src="./assets/img/Mastercard.png" alt="Mastercard" />
+                <img src="./assets/img/Visacard.png" alt="Visa" />
+                <img src="./assets/img/Unionpay.png" alt="UnionPay" />
+                <img src="./assets/img/Applepay.png" alt="Apple Pay" />
+                <img src="./assets/img/Googlepay.png" alt="Google Pay" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Card number</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ex: 4242 4242 4242 4242"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiration Date</label>
+                <input type="text" class="form-control" placeholder="Month" />
+              </div>
+              <div class="form-group">
+                <label>&nbsp;</label>
+                <input type="text" class="form-control" placeholder="Year" />
+              </div>
+              <div class="form-group">
+                <label>Security code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Three digits"
+                />
+              </div>
+            </div>
+
+            <div class="payment-option" id="paypal-option">
+              <input type="radio" id="paypal" name="payment" />
+              <label for="paypal">Paypal</label>
+              <div class="payment-icons">
+                <img src="./assets/img/Paypal.png" alt="PayPal" />
+              </div>
+            </div>
+
+            <p class="terms-text">
+              By clicking the button, you agree to the
+              <a href="#">Terms and Conditions</a>
+            </p>
+
+            <button class="place-order-btn">Place order</button>
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <h2 class="summary-title">Order Summary</h2>
+
+          <div class="product-item">
+            <div class="product-image">
+              <img
+                src="./assets/img/Fresheggs.png"
+                alt="Fresh and Tasty Eggs"
+                class="img"
+              />
+            </div>
+            <div class="product-details">
+              <div class="product-name">Fresh and Tasty Eggs x 1</div>
+              <div class="product-meta">#1234567</div>
+            </div>
+            <div class="product-price">MAD 60.00</div>
+          </div>
+          <div>
+            <span>Total</span>
+            <span class="total">MAD 60.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Launch Sale Section -->
+    <div class="launch-sale">
+      <div class="decorative-curves">
+        <div class="curve curve-1"></div>
+        <div class="curve curve-2"></div>
+        <div class="curve curve-3"></div>
+        <div class="circle-accent"></div>
+      </div>
+      <div class="content-wrapper">
+        <h2>Launch Sale is On</h2>
+        <p>Shop today</p>
+        <div class="text-content"></div>
+        <a href="#" class="shop-btn">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <h2 class="footer-title">BIOLIFE Products</h2>
+
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Links</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Affiliation</a></li>
+              <li><a href="#">Terms of Use</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li><a href="#">Eggs</a></li>
+              <li><a href="#">Drinks</a></li>
+              <li><a href="#">Eatables</a></li>
+              <li><a href="#">Milk & Cheese</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Terms</h3>
+            <ul class="footer-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Subscribe to Newsletter</h3>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Enter your email"
+              />
+              <button type="submit" class="newsletter-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            All Rights Reserved - Dairy Farm Products
+          </div>
+
+          <div class="payment-methods-footer">
+            <img src="./assets/img/Mastercard.png" alt="Mastercard" />
+            <img src="./assets/img/Visacard.png" alt="Visa" />
+            <img src="./assets/img/Unionpay.png" alt="Union Pay" />
+            <img src="./assets/img/Applepay.png" alt="Apple Pay" />
+            <img src="./assets/img/Googlepay.png" alt="Google Pay" />
+          </div>
+
+          <div class="footer-terms">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/chekout.js"></script>
+  </body>
+</html>
