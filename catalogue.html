@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Gallery</title>
+    <link rel="stylesheet" href="assets\style\catalogue.css" />
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+          <img src="assets\img\logo.png" alt="BioLife Logo" />
+        </div>
+  
+        <nav class="nav-menu">
+          <a href="#">Dairy</a>
+          <a href="#">Eggs</a>
+          <a href="#">Poultry</a>
+          <a href="#">Rice</a>
+          <a href="#">Beef/Mutton</a>
+          <a href="#" id="more">More</a>
+  
+          <button class="cart-btn">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+              <path d="M20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span>1</span>
+          </button>
+  
+          <input type="text" class="search-box" placeholder="Search" />
+  
+          <img src="assets\img\utilisateur.png" alt="User Profile" class="user-avatar" />
+        </nav>
+      </header>
+    <div class="container">
+      <!-- First batch of products -->
+      <div class="product-card">
+        <img
+          src="assets/img/eggs.png"
+          alt="product1"
+          class="product-image"
+        />
+        <p class="product-name">6 Fresh and Tasty Eggs</p>
+        <p class="product-price">30.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/milk.png"
+          alt="product2"
+          class="product-image"
+        />
+        <p class="product-name">Loxely Farm Natural Milk</p>
+        <p class="product-price">40.00MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/hasbalred.png"
+          alt="product3"
+          class="product-image"
+        />
+        <p class="product-name">7Hasbel Syrup Honey</p>
+        <p class="product-price">150.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/hasbalblue.png"
+          alt="product4"
+          class="product-image"
+        />
+        <p class="product-name">Hasbal Honey</p>
+        <p class="product-price">150.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/dates.png"
+          alt="product5"
+          class="product-image"
+        />
+        <p class="product-name">Ajwah Dates</p>
+        <p class="product-price">170.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/1.png"
+          alt="product6"
+          class="product-image"
+        />
+        <p class="product-name">Dfp Yogurt 5kg</p>
+        <p class="product-price">75.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/2.png"
+          alt="product7"
+          class="product-image"
+        />
+        <p class="product-name">Dfp Yogurt 10kg</p>
+        <p class="product-price">75.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/3.png"
+          alt="product8"
+          class="product-image"
+        />
+        <p class="product-name">Dairy Farm Yogurt V3 </p>
+        <p class="product-price">85.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+
+      <!-- Second batch of products -->
+      <div class="product-card">
+        <img
+          src="assets/img/4.png"
+          alt="product9"
+          class="product-image"
+        />
+        <p class="product-name">Dairy Farm Yogurt V2</p>
+        <p class="product-price">85.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card selected">
+        <img
+          src="assets/img/5.png"
+          alt="product10"
+          class="product-image"
+        />
+        <p class="product-name">Longley Farm Yogurt</p>
+        <p class="product-price">90.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/pineapple.png"
+          alt="product11"
+          class="product-image"
+        />
+        <p class="product-name">Asya Pineapple</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/pomegrenade.png"
+          alt="product12"
+          class="product-image"
+        />
+        <p class="product-name">Asya Pomegranate</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/rose.png"
+          alt="product13"
+          class="product-image"
+        />
+        <p class="product-name">Asya Rose</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/sv2.png"
+          alt="product14"
+          class="product-image"
+        />
+        <p class="product-name">Asya Strawberry V2</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/str.png"
+          alt="product15"
+          class="product-image"
+        />
+        <p class="product-name">Asya Strawberry</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/vanille.png"
+          alt="product16"
+          class="product-image"
+        />
+        <p class="product-name">Asya Vanilla</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/watermelon.png"
+          alt="product17"
+          class="product-image"
+        />
+        <p class="product-name">Asya Watermelon</p>
+        <p class="product-price">45.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/BE.png"
+          alt="product18"
+          class="product-image"
+        />
+        <p class="product-name">Birdbros Eggs</p>
+        <p class="product-price">40.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/ladetox.png"
+          alt="product19"
+          class="product-image"
+        />
+        <p class="product-name">Owari la detox</p>
+        <p class="product-price">200.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/antistress.png"
+          alt="product20"
+          class="product-image"
+        />
+        <p class="product-name">Owari anti-stress</p>
+        <p class="product-price">250.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+
+      <!-- New products: Boost Energy -->
+      <div class="product-card">
+        <img
+          src="assets/img/owaridigestion.png"
+          alt="product21"
+          class="product-image"
+        />
+        <p class="product-name">Owari digestion</p>
+        <p class="product-price">300.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/feminin.png"
+          alt="product22"
+          class="product-image"
+        />
+        <p class="product-name">Owari Féminin</p>
+        <p class="product-price">270.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/Sommeil.png"
+          alt="product23"
+          class="product-image"
+        />
+        <p class="product-name">Owari Sommeil</p>
+        <p class="product-price">295.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/mummydetox.png"
+          alt="product24"
+          class="product-image"
+        />
+        <p class="product-name">Owari MummyDetox</p>
+        <p class="product-price">300.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/queue de cerises.png"
+          alt="product25"
+          class="product-image"
+        />
+        <p class="product-name">Owari Queue de cerises</p>
+        <p class="product-price">200.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/ladyshake1.png"
+          alt="product26"
+          class="product-image"
+        />
+        <p class="product-name">Lady shake Banana</p>
+        <p class="product-price">250.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/ladyshake2.png"
+          alt="product27"
+          class="product-image"
+        />
+        <p class="product-name">Lady shake myrtilles</p>
+        <p class="product-price">250.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/ladyshake3.png"
+          alt="product28"
+          class="product-image"
+        />
+        <p class="product-name">Lady shake Fraise</p>
+        <p class="product-price">250.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/ladyshake4.png"
+          alt="product29"
+          class="product-image"
+        />
+        <p class="product-name">Lady shake Café</p>
+        <p class="product-price">250.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+      <div class="product-card">
+        <img
+          src="assets/img/ladyshake5.png"
+          alt="product30"
+          class="product-image"
+        />
+        <p class="product-name">Lady shake Caramel</p>
+        <p class="product-price">250.00 MAD</p>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+</body>
+</html>

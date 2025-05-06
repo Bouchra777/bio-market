@@ -102,17 +102,17 @@
     flex: 1;
     background-color: white;
     border-radius: 8px;
-    padding: 40px; /* Increased padding from 20px to 40px */
+    padding: 40px; 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
     height: fit-content;
-    max-width: 1500px; /* Added max-width to control horizontal size */
-    margin: 0 auto; /* Center the div if desired */
-    font-size: 1.2em; /* Increase font size throughout by 20% */
+    max-width: 1500px; 
+    margin: 0 auto; 
+    font-size: 1.2em; 
   }
   
   .summary-title {
-    font-size: 28px; /* Increased from 22px */
-    margin-bottom: 30px; /* Increased from 20px */
+    font-size: 28px; 
+    margin-bottom: 30px; 
     color: #222;
     font-weight: bold;
   }
@@ -120,13 +120,13 @@
   .product-item {
     display: flex;
     align-items: center;
-    padding: 20px 0; /* Add padding between items */
-    border-bottom: 1px solid #f0f0f0; /* Optional divider */
-    margin-bottom: 20px; /* Space between product and total */
+    padding: 20px 0; 
+    border-bottom: 1px solid #f0f0f0; 
+    margin-bottom: 20px; 
   }
   
   .product-image {
-    width: 100px; /* Larger image area */
+    width: 100px; 
     height: 100px;
     margin-right: 20px;
     
@@ -148,7 +148,7 @@
   
   .product-name {
     color: #000000;
-    font-size: 18px; /* Larger product name */
+    font-size: 18px; 
     margin-bottom: 8px;
   }
   
@@ -165,7 +165,7 @@
   /* For the total row */
   .order-summary > div:last-child {
     display: flex;
-    justify-content: space-between; /* Better alignment than fixed margin */
+    justify-content: space-between; 
     margin-top: 20px;
     padding-top: 20px;
 
@@ -174,7 +174,7 @@
   .total {
     color: #82828b;
     font-weight: bold;
-    /* Removed the fixed margin-left and replaced with flex layout above */
+    
   }
   .form-group {
     margin-top: 15px;
@@ -331,21 +331,21 @@
 
 /* Launch Sale Section */        
 .launch-sale {            
-background-color: white;            
-border-radius: 30px; /* Increased border radius */           
-padding: 60px 50px 50px 60px; /* Increased padding */           
-margin: 10px auto -170px auto;            
-position: relative;          
-max-width: 90%; /* Using percentage instead of fixed width */            
-overflow: hidden;   
-box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-height: 350px; /* Explicit height to match photo */
+  background-color: white;            
+  border-radius: 30px;          
+  padding: 60px 50px 50px 60px;           
+  margin: 10px auto -170px auto;            
+  position: relative;          
+  max-width: 90%;            
+  overflow: hidden;   
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  height: 350px; 
 }          
 
 .content-wrapper {
 display: flex;
 flex-direction: column;
-justify-content: flex-end; /* Aligns content to the bottom */
+justify-content: flex-end; 
 align-items: flex-start;
 position: relative;
 z-index: 1;
@@ -354,7 +354,7 @@ height: 100%;
 }
 
 .text-content {
-flex: none; /* Prevents it from stretching */
+flex: none; 
 align-self: flex-start;
 padding-top: 0;
 }
@@ -604,12 +604,12 @@ margin-left: 0;
   font-size: 18px;
   }
   }
-  /* Add this to your existing CSS */
+  
 
 /* Make Order Summary appear on top when screen shrinks */
 @media (max-width: 1200px) {
   .main-content {
-    flex-direction: column-reverse; /* This makes order summary appear on top */
+    flex-direction: column-reverse; 
   }
   
   .order-summary {
@@ -675,19 +675,17 @@ margin-left: 0;
 /* Ensure the normal navigation appears on larger screens */
 @media (min-width: 769px) {
   .menu-toggle {
-    display: none; /* Hide hamburger on larger screens */
+    display: none; 
   }
   
   .nav-menu {
-    display: flex; /* Always display nav menu on larger screens */
+    display: flex; 
     flex-direction: row;
     position: static;
     box-shadow: none;
     padding: 0;
   }
 }
-
-
 
 
 /*pour ajuster les curves*/
@@ -728,7 +726,7 @@ margin-left: 0;
   }
 }
 
-/* 5. AJUSTEMENTS POUR TRÈS PETITS ÉCRANS */
+/* AJUSTEMENTS POUR TRÈS PETITS ÉCRANS */
 @media (max-width: 576px) {
   .launch-sale h2 {
     font-size: 28px;
@@ -765,7 +763,7 @@ margin-left: 0;
 }
 
  
-/* Fix 2: Make Launch Sale section and curves responsive */
+/* Make Launch Sale section and curves responsive */
 @media (max-width: 1000px) {
   .launch-sale {
     padding: 40px 30px;
