@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Abhaya Libre', serif;
   }
   
   body {
     display: flex;
     background-color: #f8f9fa;
     color: #333;
+    font-family: 'Abhaya Libre', serif;
   }
   
   /* Sidebar styles */

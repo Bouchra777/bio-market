@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Abhaya Libre', serif;
   }
   
   body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Abhaya Libre', serif;
     background-color: #f4f6f8;
   }
   /* Header styles */

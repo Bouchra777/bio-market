@@ -3,12 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Abhaya Libre', serif;
 }
 
 body {
   background-color: #f8f8f8;
   color: #333;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .container {

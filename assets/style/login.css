@@ -1,12 +1,13 @@
 * {
   box-sizing: border-box;
+  font-family: 'Abhaya Libre', serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: whitesmoke;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Abhaya Libre', serif;
 }
 
 a {
