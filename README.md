@@ -51,10 +51,10 @@ The interface is designed with a clean, nature-inspired aesthetic to reflect the
 
 🤝 Contributing
 Contributions are welcome! To contribute:
-1. Fork the repository
-2. Create a new branch (feature/your-feature-name)
-3. Make your changes
-4. Submit a pull request
+. Fork the repository
+. Create a new branch (feature/your-feature-name)
+. Make your changes
+. Submit a pull request
 
 📜 License
 This project is licensed under the MIT License. Feel free to use, modify, and share it.
