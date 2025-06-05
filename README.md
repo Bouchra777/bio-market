@@ -57,5 +57,4 @@ Contributions are welcome! Feel free to fork the repository, create a feature br
 ## 📜 License
 This project is licensed under the **MIT License**.
 
-## 📧 Contact
-For any inquiries or suggestions, reach out to **your-email@example.com** or open an issue on GitHub.
+
