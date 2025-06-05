@@ -1,9 +1,128 @@
+<?php
+// Configuration de base
+$site_title = "BioLife Marketplace";
+$cart_count = 0; // Peut être récupéré depuis une session ou base de données
+
+// Produits en vedette (peuvent venir d'une base de données)
+$featured_products = [
+    [
+        'id' => 1,
+        'name' => 'MARROW SPAGHETTI',
+        'image' => 'assets/img/marrow spaghetti.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ],
+    [
+        'id' => 2,
+        'name' => 'Turtle COCOA PILLOWS',
+        'image' => 'assets/img/turtle cocoa pillows.png',
+        'original_price' => 70.00,
+        'sale_price' => 50.00
+    ],
+    [
+        'id' => 3,
+        'name' => 'OLIVE OIL extra virgin',
+        'image' => 'assets/img/olive oil.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ],
+    [
+        'id' => 4,
+        'name' => 'White rice',
+        'image' => 'assets/img/white rice.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ],
+    [
+        'id' => 5,
+        'name' => 'Strawberry Jar',
+        'image' => 'assets/img/strawbery jar.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ],
+    [
+        'id' => 6,
+        'name' => 'Tomato sauce',
+        'image' => 'assets/img/tomato sauce.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ],
+    [
+        'id' => 7,
+        'name' => 'Alchemilla Vulgaris',
+        'image' => 'assets/img/alchemilla.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ],
+    [
+        'id' => 8,
+        'name' => 'Détox',
+        'image' => 'assets/img/detox.png',
+        'original_price' => 72.00,
+        'sale_price' => 60.00
+    ]
+];
+
+// Partenaires
+$partners = [
+    ['name' => 'African Blue', 'logo' => 'assets/img/AfricainBleu.png'],
+    ['name' => 'Woerle', 'logo' => 'assets/img/woerle-logo-298-x-114-1.png'],
+    ['name' => 'KTC', 'logo' => 'assets/img/ktc-logo.png'],
+    ['name' => 'Partner', 'logo' => 'assets/img/image-12.png']
+];
+
+// Navigation menu
+$nav_menu = [
+    ['name' => 'Home', 'url' => '#'],
+    ['name' => 'Eggs', 'url' => '#'],
+    ['name' => 'Products', 'url' => '#'],
+    ['name' => 'Dairy', 'url' => '#'],
+    ['name' => 'Beef/Mutton', 'url' => '#'],
+    ['name' => 'More', 'url' => '#']
+];
+
+// Footer links
+$footer_links = [
+    'Links' => [
+        ['name' => 'Contact', 'url' => '#'],
+        ['name' => 'Affiliation', 'url' => '#'],
+        ['name' => 'Terms of Use', 'url' => '#']
+    ],
+    'Company' => [
+        ['name' => 'Blog', 'url' => '#'],
+        ['name' => 'Shop', 'url' => '#'],
+        ['name' => 'About', 'url' => '#']
+    ],
+    'Categories' => [
+        ['name' => 'Eggs', 'url' => '#'],
+        ['name' => 'Drinks', 'url' => '#'],
+        ['name' => 'Eatables', 'url' => '#'],
+        ['name' => 'Milk & Cheese', 'url' => '#']
+    ],
+    'Terms' => [
+        ['name' => 'Privacy Policy', 'url' => '#'],
+        ['name' => 'Terms & Conditions', 'url' => '#']
+    ]
+];
+
+// Traitement du formulaire newsletter (exemple)
+if ($_POST && isset($_POST['newsletter_email'])) {
+    $email = filter_var($_POST['newsletter_email'], FILTER_SANITIZE_EMAIL);
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // Traitement de l'inscription newsletter
+        $message = "Merci pour votre inscription !";
+    } else {
+        $error = "Email invalide";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BioLife Marketplace</title>
+    <title><?php echo $site_title; ?></title>
     <link rel="stylesheet" href="assets\style\index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700&family=Just+Another+Hand&display=swap"
@@ -20,7 +139,7 @@
     <header>
       <div class="container header-container">
         <div class="logo">
-          <a href="newindex.html">
+          <a href="index.php">
             <img
               src="assets/img/bio market logo (new).png"
               alt="BioLife Logo"
@@ -28,25 +147,24 @@
           </a>
         </div>
         <nav class="nav-menu">
-          <a href="#">Home</a>
-          <a href="#">Eggs</a>
-          <a href="#">Products</a>
-          <a href="#">Dairy</a>
-          <a href="#">Beef/Mutton</a>
-          <a href="#">More</a>
+          <?php foreach ($nav_menu as $menu_item): ?>
+            <a href="<?php echo $menu_item['url']; ?>"><?php echo $menu_item['name']; ?></a>
+          <?php endforeach; ?>
         </nav>
         <div class="header-actions">
-          <a href="card.html"
-            ><div class="cart-button">
+          <a href="card.html">
+            <div class="cart-button">
               <img src="assets/img/panier.png" alt="Cart" />
-              <span>0</span>
+              <span><?php echo $cart_count; ?></span>
             </div>
           </a>
           <div class="search-box">
-            <input type="text" placeholder="Search" />
-            <button>
-              <img src="assets/img/search.png" alt="Search" />
-            </button>
+            <form method="GET" action="">
+              <input type="text" name="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" />
+              <button type="submit">
+                <img src="assets/img/search.png" alt="Search" />
+              </button>
+            </form>
           </div>
           <a href="login.html" class="register-button">Register/Login</a>
         </div>
@@ -89,150 +207,27 @@
       <div class="container">
         <h2 class="section-title">Featured Products</h2>
         <div class="products-grid">
-          <!-- Product 1 -->
-          <div class="product-card">
+          <?php foreach ($featured_products as $product): ?>
+          <!-- Product <?php echo $product['id']; ?> -->
+          <div class="product-card" data-product-id="<?php echo $product['id']; ?>">
             <div class="product-image">
               <img
-                src="assets/img/marrow spaghetti.png"
-                alt="Marrow Spaghetti"
+                src="<?php echo $product['image']; ?>"
+                alt="<?php echo htmlspecialchars($product['name']); ?>"
               />
             </div>
             <div class="product-details">
-              <h3 class="product-title">MARROW SPAGHETTI</h3>
+              <h3 class="product-title"><?php echo htmlspecialchars($product['name']); ?></h3>
               <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
+                <span class="original-price">MAD <?php echo number_format($product['original_price'], 2); ?></span>
+                <span class="sale-price">MAD <?php echo number_format($product['sale_price'], 2); ?></span>
               </div>
-              <button class="add-cart-btn">
+              <button class="add-cart-btn" onclick="addToCart(<?php echo $product['id']; ?>)">
                 <img src="assets/img/plus.png" alt="Add to cart" />
               </button>
             </div>
           </div>
-
-          <!-- Product 2 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="assets/img/turtle cocoa pillows.png"
-                alt="Turtle COCOA PILLOWS"
-              />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">Turtle COCOA PILLOWS</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 70.00</span>
-                <span class="sale-price">MAD 50.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="assets/img/olive oil.png"
-                alt="OLIVE OIL extra virgin"
-              />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">OLIVE OIL extra virgin</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
-
-          <!-- Product 4 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/img/white rice.png" alt="White rice" />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">White rice</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
-
-          <!-- Product 5 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/img/strawbery jar.png" alt="Strawberry Jar" />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">Strawberry Jar</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
-
-          <!-- Product 6 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/img/tomato sauce.png" alt="Tomato sauce" />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">Tomato sauce</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
-
-          <!-- Product 7 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/img/alchemilla.png" alt="Alchemilla Vulgaris" />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">Alchemilla Vulgaris</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
-
-          <!-- Product 8 -->
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/img/detox.png" alt="Détox" />
-            </div>
-            <div class="product-details">
-              <h3 class="product-title">Détox</h3>
-              <div class="product-price">
-                <span class="original-price">MAD 72.00</span>
-                <span class="sale-price">MAD 60.00</span>
-              </div>
-              <button class="add-cart-btn">
-                <img src="assets/img/plus.png" alt="Add to cart" />
-              </button>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
         <div class="products-navigation">
           <button class="prev-product">
@@ -315,18 +310,11 @@
       <div class="container">
         <h2 class="section-title">Our Partners</h2>
         <div class="partners-logos">
+          <?php foreach ($partners as $partner): ?>
           <div class="partner-logo">
-            <img src="assets/img/AfricainBleu.png" alt="African Blue" />
+            <img src="<?php echo $partner['logo']; ?>" alt="<?php echo htmlspecialchars($partner['name']); ?>" />
           </div>
-          <div class="partner-logo">
-            <img src="assets/img/woerle-logo-298-x-114-1.png" alt="Woerle" />
-          </div>
-          <div class="partner-logo">
-            <img src="assets/img/ktc-logo.png" alt="KTC" />
-          </div>
-          <div class="partner-logo">
-            <img src="assets/img/image-12.png" alt="Partner" />
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
@@ -358,55 +346,45 @@
       </div>
     </div>
 
+    <!-- Messages de notification -->
+    <?php if (isset($message)): ?>
+    <div class="notification success">
+      <?php echo htmlspecialchars($message); ?>
+    </div>
+    <?php endif; ?>
+
+    <?php if (isset($error)): ?>
+    <div class="notification error">
+      <?php echo htmlspecialchars($error); ?>
+    </div>
+    <?php endif; ?>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <h2 class="footer-title">BIOLIFE Products</h2>
 
         <div class="footer-content">
+          <?php foreach ($footer_links as $section_title => $links): ?>
           <div class="footer-section">
-            <h3>Links</h3>
+            <h3><?php echo $section_title; ?></h3>
             <ul class="footer-links">
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Affiliation</a></li>
-              <li><a href="#">Terms of Use</a></li>
+              <?php foreach ($links as $link): ?>
+              <li><a href="<?php echo $link['url']; ?>"><?php echo $link['name']; ?></a></li>
+              <?php endforeach; ?>
             </ul>
           </div>
-
-          <div class="footer-section">
-            <h3>Company</h3>
-            <ul class="footer-links">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">About</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h3>Categories</h3>
-            <ul class="footer-links">
-              <li><a href="#">Eggs</a></li>
-              <li><a href="#">Drinks</a></li>
-              <li><a href="#">Eatables</a></li>
-              <li><a href="#">Milk & Cheese</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h3>Terms</h3>
-            <ul class="footer-links">
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-            </ul>
-          </div>
+          <?php endforeach; ?>
 
           <div class="footer-section">
             <h3>Subscribe to Newsletter</h3>
-            <form class="newsletter-form">
+            <form class="newsletter-form" method="POST" action="">
               <input
                 type="email"
+                name="newsletter_email"
                 class="newsletter-input"
                 placeholder="Enter your email"
+                required
               />
               <button type="submit" class="newsletter-btn">Submit</button>
             </form>
@@ -415,7 +393,7 @@
 
         <div class="footer-bottom">
           <div class="footer-copyright">
-            All Rights Reserved - BioLife Products
+            All Rights Reserved - BioLife Products &copy; <?php echo date('Y'); ?>
           </div>
 
           <div class="payment-methods-footer">
@@ -433,6 +411,37 @@
         </div>
       </div>
     </footer>
+
     <script src="assets\js\index.js"></script>
+    
+    <!-- Script PHP pour gestion du panier -->
+    <script>
+    function addToCart(productId) {
+        // Envoyer une requête AJAX pour ajouter au panier
+        fetch('add_to_cart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                product_id: productId,
+                quantity: 1
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Mettre à jour le compteur du panier
+                document.querySelector('.cart-button span').textContent = data.cart_count;
+                alert('Produit ajouté au panier !');
+            } else {
+                alert('Erreur lors de l\'ajout au panier');
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
+    }
+    </script>
   </body>
 </html>
