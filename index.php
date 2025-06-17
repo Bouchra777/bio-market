@@ -166,7 +166,9 @@ if ($_POST && isset($_POST['newsletter_email'])) {
               </button>
             </form>
           </div>
-          <a href="login.html" class="register-button">Register/Login</a>
+          <a href="login.php" class="register-button">Register/Login</a>
+          <a href="logout.php" class="logout-button" style="margin-left: 10px; background-color: #f46036; padding: 8px 16px; color: white; border-radius: 5px; text-decoration: none;">Logout</a>
+
         </div>
       </div>
     </header>
